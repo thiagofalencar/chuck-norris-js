@@ -1,0 +1,288 @@
+#desert {
+    .sun {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: #fff;
+        border-radius: 50%;
+        right: 10%;
+        top: 10%;
+        box-shadow: 0 0 50px #fff;
+    }
+    .layer {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        z-index: -9999;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+    }
+    .mountain_first {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border-radius: 30px;
+        transform: rotateZ(-45deg);
+        bottom: 50px;
+        left: -6%;
+        background: linear-gradient(to bottom left,#FDDABF,#fbac86);
+
+        &:nth-of-type(2) {
+            bottom: 40px;
+            left: 10%;
+        }
+        &:nth-of-type(3) {
+            bottom: 60px;
+            left: 50%;
+        }
+        &:nth-of-type(4) {
+            bottom: 40px;
+            left: 80%;
+        }
+    }
+    .mountain_second {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: #FCB895;
+        border-radius: 30px;
+        transform: rotateZ(-25deg);
+        bottom: 80px;
+        left: -10%;
+        &::after {
+            content: '';
+            position: absolute;
+            background: #FCB895;
+            width: 200px;
+            height: 200px;
+            border-radius: 30px;
+            transform: rotateZ(50deg);
+            top: 30px;
+            left: 70px;
+        }
+        &:nth-of-type(2) {
+            bottom: 40px;
+            left: 15%;
+        }
+        &:nth-of-type(3) {
+            bottom: 60px;
+            left: 40%;
+        }
+        &:nth-of-type(4) {
+            bottom: 40px;
+            left: 60%;
+        }
+        &:nth-of-type(5) {
+            bottom: 80px;
+            left: 80%;
+        }
+    }
+    .cactus {
+        position: absolute;
+        background: #A06C7A;
+        left: 10%;
+        bottom: 240px;
+        height: 25px;
+        width: 10px;
+        border-radius: 10px 10px 0 0;
+
+        &::after, &::before {
+            content: '';
+            position: absolute;
+            border-bottom: 5px solid #A06C7A;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            left: -10px;
+            top: -2px;
+            transform: rotateZ(45deg);
+        }
+
+        &::before {
+            left: 0;
+            top: 5px;
+            transform: rotateZ(-45deg);
+        }
+
+        &:nth-of-type(2) {
+            left: 50%;
+            height: 30px;
+            &::after {
+                top: 2px;
+            }
+            &::before {
+                left: 0;
+                top: 0;
+                transform: rotateZ(-45deg);
+            }
+        }
+
+        &:nth-of-type(3) {
+            left: 94%;
+            &::after {
+                top: 0;
+            }
+            &::before {
+                left: 0;
+                top: 6px;
+                transform: rotateZ(-45deg);
+            }
+        }
+    }
+    .refill {
+        position: absolute;
+        bottom: 240px;
+        right: 20%;
+        width: 80px;
+        height: 60px;
+        background: #A06C7A;
+        box-sizing: border-box;
+        border-top: 5px solid darken(#A06C7A,10%);
+        z-index: 5;
+        &::after, &::before {
+            content: '';
+            position: absolute;
+            background: #A06C7A;
+        }
+        &::after {
+            right: 0;
+            top: -15px;
+            width: 210px;
+            height: 10px;
+        }
+        &::before {
+            left: 99%;
+            bottom: -4px;
+            width: 100px;
+            height: 40px;
+            transform: skewY(3deg);
+        }
+        .col {
+            position: absolute;
+            bottom: 0;
+            left: -50px;
+            width: 30px;
+            height: 5px;
+            background: #A06C7A;
+            &::after, &::before {
+                content: '';
+                position: absolute;
+                background: #A06C7A;
+            }
+            &::after {
+                width: 10px;
+                height: 60px;
+                bottom: 0;
+                left: -10px;
+                background: #A06C7A;
+            }
+            &::before {
+                width: 15px;
+                height: 30px;
+                bottom: 0;
+                left: 5px;
+                border-radius: 10px 10px 0 0;
+                background: #A06C7A;
+            }
+            &:nth-of-type(2) {
+                left: -110px;
+            }
+        }
+    }
+    .earth {
+        position: absolute;
+        bottom: -55px;
+        left: 50%;
+        width: calc(100% + 16px);
+        height: 296px;
+        background: linear-gradient(to bottom,#926374,#2f2546);
+        overflow: hidden;
+        transform: translateX(-50%);
+        perspective: 100px;
+        z-index: 10;
+        box-shadow: inset 0 10px 30px -10px #4B3757;
+
+        .road {
+            position: absolute;
+            width: 100px;
+            height: 40%;
+            background: #614761;
+            top: 50%;
+            left: 30%;
+            transform: translate(-50%,-50%) skewX(-20deg) rotateX(15deg);
+            perspective: 100px;
+            border-left: 10px solid #855d76;
+            &::after, &::before {
+                content: '';
+                position: absolute;
+                width: 100px;
+                height: 50%;
+                background: #614761;
+            }
+            &::after {
+                top: 108px;
+                left: -23px;
+                width: 130px;
+                transform: skewX(30deg) rotateX(85deg);
+                border-left: 10px solid #855d76;
+            }
+            &::before {
+                bottom: 80%;
+                height: 200%;
+                left: -125px;
+                width: 60px;
+                transform: skewX(50deg) rotateX(15deg);
+                border-right: 10px solid #4f3957;
+            }
+        }
+    }
+
+    .sign {
+        position: absolute;
+        left: 10%;
+        width: 150px;
+        height: 150px;
+        bottom: 220px;
+        background: #2b2348;
+        transform: rotateZ(-45deg);
+        z-index: 11;
+        border-radius: 10px;
+        box-sizing: border-box;
+        border: 10px solid #2b2348;
+        box-shadow: inset 0 0 0 6px #583e5a;
+
+        &::after {
+            content: '';
+            width: 10px;
+            height: 200px;
+            background: #151437;
+            position: absolute;
+            top: 140px;
+            left: -116px;
+            transform: rotateZ(45deg) translateY(-50px);
+            border-right: 3px solid #221d3e;
+            box-sizing: border-box;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #583e5a;
+            border-radius: 50%;
+            top: 108px;
+            left: 13px;
+        }
+
+        img {
+            transform: rotate(45deg);
+            width: 100%;
+            margin: 0;
+            opacity: 0.7;
+        }
+    }
+}

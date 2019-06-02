@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/main.js"></script>
+</head>
+<body>
+    <main>
+        <div class="top-title">
+            <h1 class="vintage">CHUCK NORRIS</h1>
+            <h3 class="neon">Jokes</h3>          
+        </div>
+        <div class="norris-container">
+            <a id="reset-random-jokes" title="Reset random Jokes" class="btn reset">
+                <img alt="Reset jokes" src="assets/images/refresh.png">
+            </a>
+            <div class="tabs">
+                <input class="input" name="joke-tabs" checked="checked" type="radio" id="tab-random"/>
+                <label title="Random Jokes" for="tab-random"><a>Random</a></label>
+                <ul class="jokes-list" id="random-jokes"></ul>
+                <input id="tab-favorites" class="input" name="joke-tabs" type="radio"/>
+                <label title="Favorites Jokes" for="tab-favorites">
+                    <img alt="Favorites" class="tab-icon" src="assets/images/favorite.png" />
+                </label>
+                <ul class="jokes-list" id="favorites-jokes"></ul>                           
+            </div>
+        </div>
+    </main>
+    <div id="modal" class="modal">
+        <div id="modal-status" class="content">
+            <h1 class="message"></h1>        
+            <button>ok</button>
+        </div>
+    </div>
+    <div id="desert" >
+        <div class="sun"></div>
+        <div class="layer">
+            <div class="mountain_second"></div>
+            <div class="mountain_second"></div>
+            <div class="mountain_second"></div>
+            <div class="mountain_second"></div>
+            <div class="mountain_second"></div>
+        </div>
+        <div class="layer">
+            <div class="mountain_s"></div>
+            <div class="mountain_s"></div>
+            <div class="mountain_s"></div>
+            <div class="mountain_s"></div>
+            <div class="mountain_s"></div>
+        </div>
+        <div class="layer">
+            <div class="cactus"></div>
+            <div class="cactus"></div>
+            <div class="cactus"></div>
+        </div>
+        <div class="refill">
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+        <div class="earth">
+            <div class="road"></div>
+        </div>
+        <div class="sign">
+            <img alt="Norris sign face" src="assets/images/norris_sign.png" />
+        </div>
+    </div>
+    <script>
+        (() => new NorrisMain().init())();
+    </script>
+</body>
+</html>

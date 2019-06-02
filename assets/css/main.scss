@@ -1,0 +1,480 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab);
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:900);
+@import url(https://fonts.googleapis.com/css?family=Mr+Dafoe);
+
+@import "./_desert";
+
+$roboto-slab: 'Roboto Slab', serif;
+$border-color: #F975F7;
+$border-card: gray;
+$border-size: 3px;
+$background-color: #ffffff60;
+$font-color: #fff;
+
+body {
+    font-family: $roboto-slab;
+    font-size: 14px;
+    background: linear-gradient(to bottom, #fbac86, #FEF5E0);
+    color: $font-color;
+    position: relative;
+    display: flex;
+    min-height: 100vh;
+}
+
+.modal {
+    visibility: hidden;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    margin: 0;
+
+    &.error {
+        background-color: #00000080;
+        visibility: visible;
+
+        .content{
+            width: 50vw;
+            height: 40vh;
+            border: 4px solid #a70330;
+            border-radius: 10px;
+            background-color: #00000080;
+            position: relative;
+            top: calc(50% - 20vh);
+            left: calc(50% - 25vw);
+
+            &::before {
+                content: "Atention!";
+                font-family: 'Roboto Slab', sans-serif;
+                font-size: 2em;
+                text-align: center;
+                line-height: 10vh;
+                background-color: #a70330;
+                width: 100%;
+                height: 10vh;
+                position: absolute;
+                background-image: url(/assets/images/info.svg);
+                background-repeat: no-repeat;
+                background-position-y: 50%;
+            }
+
+            h1 {
+                margin: 12vh auto 2vh auto;
+                color: #ffffff;
+                font-size: 1.7em;
+                width: 90%;
+                text-align: center;
+                height: 14vh;
+            }
+
+            button {
+                cursor: pointer;
+                margin: 20px auto;
+                display: block;
+                background: #a70330;
+                color: #fff;
+                width: 30%;
+                height: 20%;
+                border: 3px solid #7e0424;
+                border-radius: 5px;
+                font-size: 2em;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+}
+
+div.top-title {
+    height: 190px;
+
+    .vintage {
+        position: relative;
+        background-image: -webkit-linear-gradient(rgb(223, 243, 253) 0%, #B6E8F1 46%, #ffffff 50%, #32120E 54%, #FFC488 58%, #582C11 90%, #EC9B4E 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 3px #f5f5f5;
+        font-size: 100px;
+        font-family: 'Titillium Web', sans-serif;
+        font-style: italic;
+        margin: 0;
+        line-height: 1;
+    }
+
+    .vintage:before {
+        content: 'CHUCK NORRIS';
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 10;
+        background-image: -webkit-linear-gradient(-40deg, transparent 0%, transparent 40%, #fff 50%, transparent 60%, transparent 100%);
+        background-position: -460px 0;
+        -webkit-background-clip: text;
+        -webkit-text-stroke: 4px white;
+        padding-right: 135px;
+        -webkit-animation-name: reflection_effect;
+        -webkit-animation-duration: 6s;
+        -webkit-animation-delay: 2s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+    }
+
+    .neon {
+        position: absolute;
+        font-family: 'Mr Dafoe', cursive;
+        font-size: 90px;
+        color: #F975F7 ;
+        transform:rotate(-15deg);
+        -ms-transform:rotate(-15deg);
+        -webkit-transform:rotate(-15deg);
+        margin: -70px 0 0 630px;
+        -webkit-text-stroke: 1px #f008b7;
+        -webkit-filter: drop-shadow(2px 2px 20px #f008b7);
+        z-index: 20;
+    }
+
+    @keyframes reflection_effect {
+        0% {
+            background-position:-460px 0;
+        }
+        10% {
+            background-position: 350px 0;
+        }
+        100% {
+            background-position: 350px 0;
+        }
+    }
+}
+
+.add-to-favorite {
+    text-align: center;
+    text-decoration: none;
+    color:  $border-color;
+    display: inline-block;
+
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    width: 40px;
+    height: 45px;
+
+    span {
+        display: none;
+    }
+
+    &:before {
+        content: "";
+        height: 40px;
+        width: 3em;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -4.5em;
+        -webkit-transform: skewX(-45deg) translateX(0);
+        transform: skewX(-45deg) translateX(0);
+    }
+    &:hover {
+        background-color: #f4c55f;
+        color: $font-color;
+        border-bottom: 4px solid #a70330;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+
+        span {
+            margin: -5px;
+            display: block;
+
+            &.favorite {
+                background-color: #ec7799;
+            }
+        }
+    }
+    &:hover:before {
+        -webkit-transform: skewX(-45deg) translateX(115px);
+        transform: skewX(-45deg) translateX(115px);
+        transition: all 0.5s ease-in-out;
+    }
+}
+
+@media (min-width: 600px) {
+    body {
+        padding: 10px;
+    }
+}
+
+main {
+    margin: 0 auto;
+
+    .norris-container {
+        width: 800px;
+        margin: 0 auto;
+
+        a.btn.reset {
+            position: absolute;
+            display: block;
+            padding: 0;
+            overflow: hidden;
+            border-radius: 50%;
+            margin-top: -50px;
+            width: 44px;
+            height: 44px;
+            box-shadow: 0 0 8px 1px #ffffff70;
+            cursor: pointer;
+
+            &:hover {
+                transition: 0.2s linear;
+                transform: rotate(90deg)
+            }
+
+            &:active {
+                transition: 0.2s ease;
+                transform: rotate(360deg);
+            }
+
+            img {
+                margin: -10px;
+            }
+        }
+
+        ul {
+            list-style-type: none;
+            overflow: hidden;
+            margin: 0;
+
+
+            &.jokes-list {
+                border: $border-size solid  $border-color;
+                box-shadow: 2px 2px 10px $border-color;
+                border-radius: 10px 0 10px 10px;
+
+                min-height: 50vh;
+
+                &.no-favorites, &.no-jokes {
+                    &::before {
+                        color: #ff6161;
+                        font-family: "Roboto Slab", sans-serif;
+                        font-size: 5vh;
+                        font-style: italic;
+                        line-height: 60vh;
+                        text-align: center;
+                        text-shadow: -2px 3px #af3535;
+                        background-blend-mode: hue;
+                        background-color: #ffffff60;
+                        background-image: url(/assets/images/skull.png);
+                        background-position-x: 95%;
+                        background-position-y: 95%;
+                        background-repeat: no-repeat;
+                        background-size: 100px;
+                        height: 100%;
+                        width: 100%;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        z-index: 1;
+                    }
+
+                }
+                &.no-jokes::before {
+                    content: "No jokes survived...";
+
+                    &.loading {
+                        background-position-y: 0;
+                    }
+                }
+
+                &.no-favorites::before {
+                    content: "No favorites survived...";
+                }
+
+
+                &.loading {
+                    li {
+                        filter: blur(2px);
+                    }
+
+                    &::before {
+                        content: "Cooking...";
+                        text-align: center;
+                        line-height: 60vh;
+                        font-family: "Roboto Slab", sans-serif;
+                        color: #ff7b80;
+                        text-shadow: -4px 3px #ce4b50;
+                        font-size: 10vh;
+                        font-style: italic;
+                        background-color: #ffffff60;
+                        background-image: url(/assets/images/magmaLamp.svg);
+                        background-repeat: no-repeat;
+                        background-size: 40%;
+                        background-position-x: 50%;
+                        background-position-y: 0;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: 1;
+                    }
+                }
+            }
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+
+            .input {
+                display: none;
+            }
+
+            label {
+                font-size: 18px;
+                font-weight: bold;
+                transition: background 0.1s, color 0.1s;
+                border: $border-size solid  $border-color;
+                box-shadow: 2px 2px 10px $border-color;
+                background-color: $background-color;
+                border-bottom: 0;
+                padding: 5px;
+                cursor: pointer;
+                position: absolute;
+                top: -46px;
+                overflow: hidden;
+
+                &[for=tab-random] {
+                    border-top-left-radius: 10px;
+                    border-right: 0;
+                    right: 50px;
+                    color: #00000080;
+                }
+
+                &[for=tab-favorites] {
+                    border-top-right-radius: 10px;
+                    width: 36px;
+                    height: 33px;
+                    right: 0;
+
+
+                    img {
+                        position: absolute;
+                        width: 50px;
+                        margin-top: -15px;
+                        margin-left: -10px;
+                    }
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    background-color: #fff;
+                    width: 60%;
+                    height: 100%;
+                    top: 0;
+                    left: -110%;
+                    -webkit-transform: skewX(-45deg) translateX(0);
+                    transform: skewX(-45deg) translateX(0);
+                }
+
+                &:hover {
+                    background: red;
+                    color: #fff;
+
+                    &:hover::before {
+                        -webkit-transform: skewX(-45deg) translateX(600%);
+                        transform: skewX(-45deg) translateX(600%);
+                        transition: all 0.5s ease-in-out;
+                    }
+
+                }
+
+                &:active {
+                    border-bottom: #fff;
+                }
+
+                a {
+                    font-size: 25px;
+                    position: relative;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            input {
+                &:checked + label + .jokes-list {
+                    display: block;
+                    z-index: 20;
+                }
+
+                &:focus + label {
+                    box-shadow: inset 0 0 0 3px #2aa1c0;
+                    z-index: 1;
+                }
+
+                &:checked + label {
+                    background: white;
+                    color: #000;
+                    border-bottom: $border-size solid $background-color;
+                }
+            }
+
+
+            ul.jokes-list {
+                height: 100%;
+                padding: 20px 30px 30px;
+                display: none;
+                width: 800px;
+                background-color: $background-color;
+
+                li {
+                    display: grid;
+                    grid-template-columns: 80px auto 40px;
+                    overflow: hidden;
+                    margin-bottom: 15px;
+                    border: 1px solid  $border-card;
+                    border-radius: 10px;
+                    padding: 5px;
+                    background-color: #ffffff50;
+                    color: #000;
+
+                    h2 {
+                        text-align: center;
+                        font-style: italic;
+                        font-size: 18px;
+                        padding: 0 12px;
+                    }
+
+                    img.norris {
+                        height: 198px;
+                        opacity: 0.8;
+                        margin-bottom: -85px;
+                    }
+
+                    img.icon-favorite {
+                        height: 46px;
+                        width: 45px;
+                        margin: 0;
+
+                        &.star {
+                            margin: -3px;
+                        }
+                        &.remove {
+                            margin: 3px;
+                        }
+                    }
+                }
+            }
+
+            @media (min-width: 600px) {
+                .jokes-list {
+                    order: 99;
+                }
+            }
+        }
+    }
+}
