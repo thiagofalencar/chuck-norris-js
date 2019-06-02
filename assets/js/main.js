@@ -87,9 +87,9 @@ function NorrisMain() {
         });
         div.innerHTML = `
             <span title="Kick out this guy!" class="favorite">
-                <img  alt="Remove from favorites" class="icon-favorite remove" src="/assets/images/remove.png" />
+                <img  alt="Remove from favorites" class="icon-favorite remove" src="assets/images/remove.png" />
             </span>
-            <img  alt="Remove from favorites" class="icon-favorite" src="/assets/images/remove.png" />
+            <img  alt="Remove from favorites" class="icon-favorite" src="assets/images/remove.png" />
         `;
         return div;
     }

@@ -55,7 +55,7 @@ body {
                 width: 100%;
                 height: 10vh;
                 position: absolute;
-                background-image: url(/assets/images/info.svg);
+                background-image: url('../../assets/images/info.svg');
                 background-repeat: no-repeat;
                 background-position-y: 50%;
             }
@@ -84,7 +84,6 @@ body {
             }
         }
     }
-
 }
 
 div.top-title {
@@ -253,7 +252,6 @@ main {
                 border-radius: 10px 0 10px 10px;
 
                 min-height: 50vh;
-
                 &.no-favorites, &.no-jokes {
                     &::before {
                         color: #ff6161;
@@ -265,7 +263,7 @@ main {
                         text-shadow: -2px 3px #af3535;
                         background-blend-mode: hue;
                         background-color: #ffffff60;
-                        background-image: url(/assets/images/skull.png);
+                        background-image: url('../../assets/images/skull.png');
                         background-position-x: 95%;
                         background-position-y: 95%;
                         background-repeat: no-repeat;
@@ -307,7 +305,7 @@ main {
                         font-size: 10vh;
                         font-style: italic;
                         background-color: #ffffff60;
-                        background-image: url(/assets/images/magmaLamp.svg);
+                        background-image: url('../../assets/images/magmaLamp.svg');
                         background-repeat: no-repeat;
                         background-size: 40%;
                         background-position-x: 50%;

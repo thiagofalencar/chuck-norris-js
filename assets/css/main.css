@@ -392,7 +392,7 @@ body {
   width: 100%;
   height: 10vh;
   position: absolute;
-  background-image: url(/assets/images/info.svg);
+  background-image: url("../../assets/images/info.svg");
   background-repeat: no-repeat;
   background-position-y: 50%;
 }
@@ -619,7 +619,7 @@ main .norris-container ul.jokes-list.no-favorites::before, main .norris-containe
   text-shadow: -2px 3px #af3535;
   background-blend-mode: hue;
   background-color: #ffffff60;
-  background-image: url(/assets/images/skull.png);
+  background-image: url("../../assets/images/skull.png");
   background-position-x: 95%;
   background-position-y: 95%;
   background-repeat: no-repeat;
@@ -659,7 +659,7 @@ main .norris-container ul.jokes-list.loading::before {
   font-size: 10vh;
   font-style: italic;
   background-color: #ffffff60;
-  background-image: url(/assets/images/magmaLamp.svg);
+  background-image: url("../../assets/images/magmaLamp.svg");
   background-repeat: no-repeat;
   background-size: 40%;
   background-position-x: 50%;
