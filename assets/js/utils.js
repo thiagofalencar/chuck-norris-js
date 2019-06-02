@@ -25,7 +25,7 @@ function NorrisApi() {
 
     this.setRandomJokes = (callback, callbackError) => {
         setTimeout(() => {
-            fetch('http://api.icndb.com/jokes/random/10?escape=javascript')
+            fetch('https://api.icndb.com/jokes/random/10?escape=javascript')
                 .then((response) => response.json())
                 .then(({type, value}) => {
                     random.set(value);
