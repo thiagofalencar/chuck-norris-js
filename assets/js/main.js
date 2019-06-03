@@ -29,8 +29,8 @@ function NorrisMain() {
         api.getRandomJokes(
             (value) => {
                 randomJokesList.classList.remove('no-jokes')
+                randomJokesList.innerHTML = '';
                 if ((value || []).length > 0) {
-                    randomJokesList.innerHTML = '';
                     value.forEach((value) => {
                         const li = createElem('li');
                         li.innerHTML = jokeElem(value);
