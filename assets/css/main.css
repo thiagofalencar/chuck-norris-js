@@ -252,7 +252,7 @@
 #desert .earth .road {
   position: absolute;
   width: 100px;
-  height: 40%;
+  height: 50%;
   background: #614761;
   top: 50%;
   left: 30%;
@@ -281,10 +281,10 @@
 }
 
 #desert .earth .road::before {
-  bottom: 80%;
+  bottom: 77%;
   height: 200%;
-  left: -125px;
-  width: 60px;
+  left: -156px;
+  width: 55px;
   -webkit-transform: skewX(50deg) rotateX(15deg);
           transform: skewX(50deg) rotateX(15deg);
   border-right: 10px solid #4f3957;
