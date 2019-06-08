@@ -11,6 +11,7 @@
   top: 10%;
   -webkit-box-shadow: 0 0 50px #fff;
           box-shadow: 0 0 50px #fff;
+  z-index: -1;
 }
 
 #desert .layer {
